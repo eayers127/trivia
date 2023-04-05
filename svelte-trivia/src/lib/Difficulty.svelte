@@ -1,24 +1,35 @@
 <script>
- let difficulties = ['Easy', 'Medium', 'Hard'];
+ let difficulties = ['easy', 'medium', 'hard'];
 
- export let selectedCategory = '';
+ export let selectedDifficulty = '';
 
-  function selectCategory(category) {
-    selectedCategory = category;
-    console.log(selectedCategory)
+  function selectDifficulty(difficulty) {
+    selectedDifficulty = difficulty;
+    console.log(selectedDifficulty)
   }
 
 
 </script>
 
 <div>
- <h2>Choose a Category:</h2>
+ <h2>Select a Difficulty:</h2>
 
 <ul>
-    {#each categories as category}
+    {#each difficulties as difficulty}
       <li>
-        <button on:click={() => selectCategory(category)}>{category}</button>
+        <button on:click={() => selectDifficulty(difficulty)}>{difficulty}</button>
       </li>
     {/each}
   </ul>
 </div>
+
+<style>
+ul{
+    list-style-type: none;
+  }
+  button{
+    background-color: blue;
+    color: white;
+    margin: .5rem 0;
+  }
+</style>

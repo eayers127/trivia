@@ -6,6 +6,7 @@
   import Easy from './lib/Easy.svelte'
   import Category from './lib/Category.svelte'
   import Start from './lib/Start.svelte'
+  import Difficulty from './lib/Difficulty.svelte'
 </script>
 
 <main>
@@ -15,8 +16,7 @@
   <h1>Svelte Trivia</h1>
 
   <div class="card">
-    <Easy />
-    <Hard />
+    <Difficulty />
   </div>
   <div>
   <Category />
@@ -44,5 +44,8 @@
   }
   .read-the-docs {
     color: #888;
+  }
+  ul{
+    list-style-type: none;
   }
 </style>
