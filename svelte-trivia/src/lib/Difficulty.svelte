@@ -1,5 +1,5 @@
 <script>
- let categories = ['Sports', 'Movies', 'Science'];
+ let difficulties = ['Easy', 'Medium', 'Hard'];
 
  export let selectedCategory = '';
 

@@ -5,6 +5,7 @@
   import Hard from './lib/Hard.svelte'
   import Easy from './lib/Easy.svelte'
   import Category from './lib/Category.svelte'
+  import Start from './lib/Start.svelte'
 </script>
 
 <main>
@@ -21,13 +22,10 @@
   <Category />
   </div>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
+  <div>
+  <Start />
+  </div>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
 </main>
 
 
