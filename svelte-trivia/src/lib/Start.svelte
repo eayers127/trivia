@@ -4,7 +4,7 @@ import selectedDifficulty from './Difficulty.svelte'
 
 let questions = [];
   async function startGame(){
-      const response = await fetch(`https://opentdb.com/api.php?amount=10&?category=${selectedCategory.id}&?difficulty=${selectedDifficulty}&type=multiple`);
+      const response = await fetch(`https://opentdb.com/api.php?amount=10&?category=${selectedCategory}&?difficulty=${selectedDifficulty}&type=multiple`);
         const data = await response.json()
         questions = data.results
         console.log(questions[3])
@@ -58,6 +58,6 @@ ul{
     width: 100%;
     background-color: green;
     color: white;
-    margin: .5rem 0;
+    margin: 5rem 0;
   }
 </style>
