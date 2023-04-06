@@ -25,7 +25,7 @@
         <ul>
     {#each categories as category}
       <li>
-        <button on:click={() => selectCategory(category.id)}>{category.name}</button>
+        <button on:click={() => selectCategory(category)}>{category.name}</button>
       </li>
     {/each}
   </ul>

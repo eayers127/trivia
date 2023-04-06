@@ -2,8 +2,6 @@
 <script>
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
-  import Hard from './lib/Hard.svelte'
-  import Easy from './lib/Easy.svelte'
   import Category from './lib/Category.svelte'
   import Start from './lib/Start.svelte'
   import Difficulty from './lib/Difficulty.svelte'
