@@ -5,7 +5,7 @@
   {id: 17, name: 'Science'}
   ];
 
- let category = 21;
+ let category = '21';
 
   function selectCategory(category) {
     category = category.id;
@@ -65,25 +65,18 @@ let incorrect = 0
 <div>
  <h2>Choose a Category:</h2>
 
-        <ul>
-    {#each categories as category}
-      <li>
-        <button on:click={() => selectCategory(category)}>{category.name}</button>
-      </li>
-    {/each}
-  </ul>
-</div>
-<div>
+<select name="category-select" bind:value={category}>
+			<option value="21">Sports</option>
+			<option value="22">Geography</option>
+			<option value="23">History</option>
+		</select>
  <h2>Select a Difficulty:</h2>
-        
+        <select name="difficulty-select"  bind:value={difficulty}>
+			<option value="easy">Easy</option>
+			<option value="medium">Medium</option>
+			<option value="hard">Hard</option>
+		</select>
 
-        <ul>
-    {#each difficulties as difficulty}
-      <li class = "selectDifficulty ? 'selected' : ''">
-        <button on:click={() => selectDifficulty(difficulty)}>{difficulty}</button>
-      </li>
-    {/each}
-  </ul>
 </div>
 <button class='start' on:click={startGame}>
   Start Game
