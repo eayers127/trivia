@@ -1,6 +1,25 @@
 <script>
-import category from './Category.svelte'
-import difficulty from './Difficulty.svelte'
+ let categories = [
+  {id: 21, name: 'Sports'}, 
+  {id: 11, name:'Movies'}, 
+  {id: 17, name: 'Science'}
+  ];
+
+ let category = 21;
+
+  function selectCategory(category) {
+    category = category.id;
+    console.log(category)
+  }
+
+let difficulties = ['easy', 'medium', 'hard'];
+
+let difficulty = 'easy';
+
+  function selectDifficulty(difficulty) {
+    difficulty = difficulty;
+    console.log(difficulty)
+  }
 
 let questions = [];
   async function startGame(){
@@ -31,17 +50,40 @@ let incorrect = 0
   function selectedAnswer(event) {
 		const questionText = event.target.parentElement.parentElement.firstChild.textContent;
 		const answerText = event.target.value;
-		const questionObject = currentQuestions.find(question => question.text === questionText);
+		const questionObject = questions.find(question => question.text === questionText);
 		if(answerText === questionObject.correctAnswer) {
-			correctCount++;
+			correct++;
 		}
 		else {
-			incorrectCount++;
+			incorrect++;
 		}
 	}
 
 
 </script>
+<div>
+ <h2>Choose a Category:</h2>
+
+        <ul>
+    {#each categories as category}
+      <li>
+        <button on:click={() => selectCategory(category)}>{category.name}</button>
+      </li>
+    {/each}
+  </ul>
+</div>
+<div>
+ <h2>Select a Difficulty:</h2>
+        
+
+        <ul>
+    {#each difficulties as difficulty}
+      <li class = "selectDifficulty ? 'selected' : ''">
+        <button on:click={() => selectDifficulty(difficulty)}>{difficulty}</button>
+      </li>
+    {/each}
+  </ul>
+</div>
 <button class='start' on:click={startGame}>
   Start Game
 </button>
@@ -59,7 +101,9 @@ let incorrect = 0
   </div>
 {/each}
 <div>
+<h3>Correct Answers:</h3>
 {correct}
+<h3>Incorrect Answers:</h3>
 {incorrect}
 </div>
 </div>
