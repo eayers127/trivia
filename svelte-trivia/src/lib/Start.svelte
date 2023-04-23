@@ -31,6 +31,7 @@ let questions = [];
           const questionText = questionObject.question;
           const questionType = questionObject.type;
           const questionCategory = questionObject.category;
+          const correctAnswer = questionObject.correct_answer
           const answersArray = [questionObject.correct_answer, ...questionObject.incorrect_answers];
           questions = [...questions,
           {
@@ -51,7 +52,7 @@ let incorrect = 0
 		const questionText = event.target.parentElement.parentElement.firstChild.textContent;
 		const answerText = event.target.value;
 		const questionObject = questions.find(question => question.text === questionText);
-		if(answerText) {
+		if(questions.correctAnswer) {
 			correct++;
 		}
 		else {
@@ -95,7 +96,7 @@ let incorrect = 0
     <h3>{question.text}</h3>
     <ul>
       {#each question.answers as answer}
-        <li><button on:click={selectedAnswer}>{answer}</button></li>
+        <li><button value={answer} on:click={selectedAnswer}>{answer}</button></li>
       {/each}
     </ul>
   </div>
