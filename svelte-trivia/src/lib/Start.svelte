@@ -51,7 +51,7 @@ let incorrect = 0
 		const questionText = event.target.parentElement.parentElement.firstChild.textContent;
 		const answerText = event.target.value;
 		const questionObject = questions.find(question => question.text === questionText);
-		if(answerText === questionObject.correctAnswer) {
+		if(answerText) {
 			correct++;
 		}
 		else {
